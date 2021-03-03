@@ -10,13 +10,14 @@ let clock = () => {
     hrs = hrs - 12;
     period = "PM";
     }
-    hrs = hrs < 10 ? "0" + hrs : hrs;
-    mins = mins < 10 ? "0" + mins : mins;
-    secs = secs < 10 ? "0" + secs : secs;
+    hrs = hrs < 10 ? + hrs : hrs;
+    mins = mins < 10 ? + mins : mins;
+    secs = secs < 10 ? + secs : secs;
 
     let time = `${hrs}:${mins}:${secs}:${period}`;
     document.getElementById("clock").innerText = time;
     setTimeout(clock, 1000);
+    
 };
 
 clock();
